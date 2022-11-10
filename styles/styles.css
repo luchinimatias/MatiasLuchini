@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gemunu+Libre:wght@500&family=PT+Sans:ital@1&display=swap");
+body {
+  background-image: linear-gradient(
+    to bottom,
+    #7c7575,
+    #7f797b,
+    #817d80,
+    #828185,
+    #848589,
+    #85878b,
+    #858a8d,
+    #868c8f,
+    #858d8f,
+    #858d8f,
+    #848e8f,
+    #848e8e
+  );
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+nav {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+}
+h1 {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+}
+section {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+header {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+nav {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+footer {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+aside {
+  font-family: "Gemunu Libre", "Times New Roman", Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+video {
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  color: white;
+}
+.gridContainer {
+  display: grid;
+}
+
+.navbarList {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbarItem {
+  display: inline-block;
+}
+.navLink {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+}
+
+.navbarItem:hover > ul {
+  display: list-item;
+  background-color: rgb(230, 15, 15);
+}
+.navLink:hover {
+  background-color: rgb(230, 15, 15);
+  color: black;
+}
+.submenuItem:hover a {
+  color: black;
+}
+.activo {
+  color: black;
+}
+
+.imagenFlayer {
+  width: 300px;
+  height: 300px;
+}
+
+.imagenFlayer:hover {
+  width: 302px;
+  height: 302px;
+}
+
+.contenedorBanner {
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.offcanvas-title{
+  color: black;
+}
+fieldset{
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 799px) {
+  .gridContainer {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 170px 100px auto auto 100px;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "main main"
+      "aside aside"
+      "footer footer";
+  }
+
+  header {
+    grid-area: header;
+  }
+  .header h1 {
+    display: flex;
+    justify-content: center;
+    margin-block-start: auto;
+  }
+  .nav {
+    grid-area: nav;
+    justify-content: center;
+  }
+
+  .main {
+    grid-area: main;
+  }
+  .aside {
+    grid-area: aside;
+  }
+  footer {
+    grid-area: footer;
+  }
+  footer p {
+    font-size: small;
+  }
+}
+
+/*
+.carousel-inner > .carousel-item > img {
+  object-fit: scale-down;
+  height: 50vh;
+  width: 100%;
+}**/
+
+@media screen and (min-width: 800px) {
+  .gridContainer {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 170px auto auto 100px;
+    grid-template-areas:
+      "header header header  nav nav"
+      "main main main main  main"
+      "aside aside aside aside  aside"
+      "footer footer footer  footer footer";
+  }
+  header {
+    grid-area: header;
+  }
+  .header h1 {
+    display: flex;
+    justify-content: flex-end;
+    margin-block-start: auto;
+  }
+  .carousel {
+    padding: 1rem 0rem 0rem 0rem;
+  }
+  section {
+    padding: 2rem 0rem 0rem 0rem;
+  }
+  .nav {
+    grid-area: nav;
+  }
+  .main {
+    grid-area: main;
+  }
+
+  .aside {
+    grid-area: aside;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+.activo {
+  color: black;
+}
+.header img {
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.borde {
+  border: 1;
+  border-radius: 1.5rem;
+  box-shadow: 0px 0px 20px 0px;
+}
+.contenedorPrincipal {
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.logoWhatsapp {
+  position: fixed;
+  height: 4rem;
+  width: 4rem;
+  margin-left: 40%;
+}
+
+.contFooter {
+  display: flex;
+}
+
+.contItem {
+  width: auto;
+  padding: 5px;
+}
+
+.imgIcon {
+  width: 30px;
+  height: 30px;
+}
+.imgIcon:hover {
+  width: 31px;
+  height: 31px;
+  filter: saturate(280%);
+}
+
+footer {
+  width: 100%;
+  margin-top: 1rem;
+  color: white;
+}
+footer p {
+  text-align: inherit;
+  padding: 0rem;
+}
+footer a {
+  color: white;
+}
+.footerItem:hover {
+  color: black;
+}
+
+.modal-dialog{
+  color: black;
+}
+
+/* Services Section
+--------------------------------*/
+#services {
+
+  background-size: cover;
+  padding: 80px 0 60px 0;
+}
+
+#services .box {
+  padding: 50px 20px;
+  margin-bottom: 50px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  height: 200px;
+  position: relative;
+  background: rgb(78, 78, 78);
+}
+
+#services .icon {
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+  transition: 0.2s;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 72px;
+  height: 72px;
+  background: #919191;
+}
+
+#services .icon a {
+  display: inline-block;
+}
+
+#services .icon i {
+  color: #fff;
+  font-size: 24px;
+}
+
+#services .box:hover .icon {
+  background: #919191;
+  border: 2px solid #919191;
+}
+
+#services .box:hover .icon i {
+  color:   #919191;
+}
+
+#services .box:hover .icon a {
+  color: #fff;
+}
+
+#services .title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+#services .title a {
+  color: #fafafa;
+}
+
+#services .description {
+  font-size: 14px;
+  line-height: 24px;
+}
