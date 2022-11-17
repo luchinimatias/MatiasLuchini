@@ -172,7 +172,22 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
+.contenedorAside {
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.contenedorAside img{
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-bottom: 1px;
+  padding-right: 1px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
 .offcanvas-title {
   color: black;
 }
