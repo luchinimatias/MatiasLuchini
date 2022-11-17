@@ -110,10 +110,7 @@ body {
   height: 300px;
 }
 
-.imagenFlayer:hover {
-  width: 302px;
-  height: 302px;
-}
+
 .buttonI {
   color: rgb(0, 0, 0);
   border-radius: 0px 20px 0px 20px;
