@@ -9,9 +9,6 @@ body {
   list-style-type: none;
   box-sizing: border-box; }
 
-nav {
-  font-family: "Gemunu Libre", "Times New Roman", Times, serif; }
-
 h1 {
   font-family: "Gemunu Libre", "Times New Roman", Times, serif; }
 
@@ -31,7 +28,7 @@ header {
 
 nav {
   font-family: "Gemunu Libre", "Times New Roman", Times, serif;
-  background-size: c cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; }
