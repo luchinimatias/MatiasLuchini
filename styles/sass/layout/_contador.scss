@@ -1,6 +1,16 @@
+.row {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @for $i from 1 through 4 {
-    .row-#{$i}{
-        background-color: lighten($contador-background-color, $i*10);
-        color: lighten($contador-color, $i*10);
-    }
+  .row-#{$i} {
+    width: 200px;
+    height: 100px;
+    margin: 1px;
+    background-color: lighten($contador-background-color, $i * 10);
+    color: lighten($contador-color, $i * 10);
+  }
 }

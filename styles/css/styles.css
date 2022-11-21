@@ -150,19 +150,37 @@ fieldset {
     border-color: white;
     background-color: #a5a6ac; }
 
+.row {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap; }
+
 .row-1 {
+  width: 200px;
+  height: 100px;
+  margin: 1px;
   background-color: #1a1a1a;
   color: #c2b8b8; }
 
 .row-2 {
+  width: 200px;
+  height: 100px;
+  margin: 1px;
   background-color: #333333;
   color: #d9d4d4; }
 
 .row-3 {
+  width: 200px;
+  height: 100px;
+  margin: 1px;
   background-color: #4d4d4d;
   color: #f1efef; }
 
 .row-4 {
+  width: 200px;
+  height: 100px;
+  margin: 1px;
   background-color: #666666;
   color: white; }
 

@@ -1,32 +1,30 @@
 .contenedorBanner {
-    display: flex;
-    justify-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    & img{
-        padding-top: 1px;
-        padding-left: 1px;
-        padding-bottom: 1px;
-        padding-right: 1px;
-        margin-top: 1rem;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-        margin-right: 1rem;
-      }
+  display: flex;
+  justify-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  & img {
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
   }
-  
-  .gridContainer {
-    display: grid;
-  }
+}
 
+.gridContainer {
+  display: grid;
+}
 
 .offcanvas-title {
-    color:  $offcanvas-title-color;
-  }
-  fieldset {
-    margin-top: 1rem;
-  }
-  .modal-dialog {
-    color: $modal-dialog-colorcolor;
-  }
-  
+  color: $offcanvas-title-color;
+}
+fieldset {
+  margin-top: 1rem;
+}
+.modal-dialog {
+  color: $modal-dialog-colorcolor;
+}
