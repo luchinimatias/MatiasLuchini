@@ -1,0 +1,6 @@
+@for $i from 1 through 4 {
+    .row-#{$i}{
+        background-color: lighten($contador-background-color, $i*10);
+        color: lighten($contador-color, $i*10);
+    }
+}

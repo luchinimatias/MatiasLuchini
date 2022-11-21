@@ -150,6 +150,22 @@ fieldset {
     border-color: white;
     background-color: #a5a6ac; }
 
+.row-1 {
+  background-color: #1a1a1a;
+  color: #c2b8b8; }
+
+.row-2 {
+  background-color: #333333;
+  color: #d9d4d4; }
+
+.row-3 {
+  background-color: #4d4d4d;
+  color: #f1efef; }
+
+.row-4 {
+  background-color: #666666;
+  color: white; }
+
 @media screen and (max-width: 799px) {
   .gridContainer {
     grid-template-columns: 50% 50%;
