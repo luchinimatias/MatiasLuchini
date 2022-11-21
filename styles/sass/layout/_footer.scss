@@ -1,0 +1,36 @@
+.contFooter {
+    display: flex;
+  }
+  
+  .contItem {
+    width: auto;
+    padding: 5px;
+  }
+ 
+  
+  .imgIcon {
+    width:   $imgIcon-width;
+    height:   $imgIcon-height;
+    &:hover {
+        width:   $imgIcon-hover-width;
+        height:  $imgIcon-hover-height;
+        filter:  $imgIcon-hover-filter;
+      }
+  }
+
+
+
+footer {
+  width: 100%;
+  margin-top: 1rem;
+  color: $footer-color;
+
+  & p {
+    text-align: inherit;
+    padding: 0rem;
+  }
+}
+
+.footerItem:hover {
+  color: black;
+}

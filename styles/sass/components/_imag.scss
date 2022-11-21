@@ -1,0 +1,34 @@
+
+.imagenFlayer {
+    width: $imagenFlayer-width;
+    height: $imagenFlayer-height;
+  }
+.header img {
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .borde {
+    border: $border;
+    border-radius: $border-radius;
+    box-shadow: $border-box-shadow;
+  }
+  .contenedorPrincipal {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+  
+  .logoWhatsapp {
+    position: fixed;
+    height: 4rem;
+    width: 4rem;
+    margin-left: 40%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  

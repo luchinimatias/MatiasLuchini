@@ -1,0 +1,30 @@
+{
+  "name": "matiasluchini",
+  "version": "1.0.0",
+  "description": "Proyecto final video vigilancias",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"hola",
+    "build-css": "node-sass --include-path scss styles/sass/origen.scss styles/css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luchinimatias/MatiasLuchini.git"
+  },
+  "keywords": [
+    "node",
+    "sass",
+    "class"
+  ],
+  "author": "ASC Luchini Matias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luchinimatias/MatiasLuchini/issues"
+  },
+  "homepage": "https://github.com/luchinimatias/MatiasLuchini#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}

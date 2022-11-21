@@ -1,0 +1,55 @@
+
+nav {
+  font-family: $title-font;
+}
+h1 {
+  font-family: $title-font;
+}
+section {
+  font-family: $title-font;
+  background-size: $background-size;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  background-attachment: $background-attachment;
+}
+header {
+  font-family: $title-font;
+  background-size: $background-size;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  background-attachment: $background-attachment;
+}
+nav {
+  font-family: $title-font;
+  background-size: c$background-size;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  background-attachment: $background-attachment;
+}
+footer {
+  font-family: $title-font;
+  background-size: $background-size;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  background-attachment: $background-attachment;
+}
+aside {
+  font-family: $title-font;
+  background-size: $background-size;
+  background-repeat: $background-repeat;
+  background-position: $background-position;
+  background-attachment: $background-attachment;
+}
+video {
+  background-color: $video-background-color;
+}
+
+a {
+  @if $menu-text-decoration == sin {
+    $menu-text-decoration: none;
+    text-decoration: $menu-text-decoration;
+  } @else {
+    $menu-text-decoration: underline;
+    text-decoration: $menu-text-decoration;
+  }
+}

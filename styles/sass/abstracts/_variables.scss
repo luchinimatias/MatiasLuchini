@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gemunu+Libre:wght@500&family=PT+Sans:ital@1&display=swap");
+$title-font: "Gemunu Libre", "Times New Roman", Times, serif;
+
+$background-size: cover;
+$background-repeat: no-repeat;
+$background-position: center;
+$background-attachment: fixed;
+$video-background-color: black;
+$menu-text-decoration: sin;/*con sin==none else underline */
+
+$navbarList-hover-background-color: rgb(218, 201, 201);
+$navLink-color: white;
+$navLink-hover-background-color: rgb(211, 211, 211);
+$navLink-hover-color: black;
+$activo-color: black;
+
+$button-color: rgb(0, 0, 0);
+$button-background-color:#a5a6ac;
+$button-border-color:rgb(104, 103, 103);
+$button-hover-border-color:rgb(255, 255, 255);
+$button-border-radius: 0px 20px 0px 20px;
+$button-hover-box-shadow:0px 0px 10px 0px;
+
+$offcanvas-title-color:black;
+$modal-dialog-colorcolor: black;
+
+$footer-color: white;
+$imgIcon-width: 30px;
+$imgIcon-height: 30px;
+$imgIcon-hover-filter: saturate(280%);
+$imgIcon-hover-width: 31px;
+$imgIcon-hover-height: 31px;
+
+$imagenFlayer-width: 300px;
+$imagenFlayer-height: 300px;
+$border: 1;
+$border-radius: 1.5rem;
+$border-box-shadow: 0px 0px 20px 0px;
