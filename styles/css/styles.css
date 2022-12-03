@@ -185,15 +185,11 @@ fieldset {
   background-color: #666666;
   color: white; }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 1199px) {
   .gridContainer {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 170px 100px auto auto 100px;
-    grid-template-areas: "header header"
- "nav nav"
- "main main"
- "aside aside"
- "footer footer"; }
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "header header" "nav nav" "main main" "aside aside" "footer footer"; }
   header {
     grid-area: header; }
   .header h1 {
@@ -212,14 +208,11 @@ fieldset {
   footer p {
     font-size: small; } }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1200px) {
   .gridContainer {
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 170px auto auto 100px;
-    grid-template-areas: "header header header  nav nav"
- "main main main main  main"
- "aside aside aside aside  aside"
- "footer footer footer  footer footer"; }
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "header header header  nav nav" "main main main main  main" "aside aside aside aside  aside" "footer footer footer  footer footer"; }
   header {
     grid-area: header; }
   .header h1 {
@@ -261,6 +254,9 @@ fieldset {
   height: 4rem;
   width: 4rem;
   margin-left: 40%; }
+
+.imagenesM {
+  margin-bottom: 3px; }
 
 .contFooter {
   display: flex; }
@@ -350,4 +346,3 @@ footer {
 
 #services .box:hover {
   background-image: url("/assets/images/pngwing.com.png"); }
-
