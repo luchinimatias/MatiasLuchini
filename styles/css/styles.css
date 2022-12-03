@@ -208,8 +208,6 @@ fieldset {
     grid-area: footer; }
   footer p {
     font-size: x-small; }
-  main {
-    background-color: #ff7f7f; }
   .ubicacion {
     width: 200px;
     height: 100px;
@@ -239,7 +237,7 @@ fieldset {
   footer p {
     font-size: small; }
   .ubicacion {
-    width: 440px;
+    width: 340px;
     height: 100px;
     margin: 1rem;
     align-items: center; } }
