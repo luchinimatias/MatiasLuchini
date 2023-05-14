@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Biblioteca de iconos Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/estilo.css">
+    <script src="../jc/carrito.js" async></script>
+    <title>IPTECNOLOGY | Carrito</title>
+    <link rel="shortcut icon" type="icon" href="../assets/images/iso.png" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+  <div class="header-nav-container">
+    <header>
+      <img
+        class="animate__animated animate__bounce animate__delay-2s"
+        height="100"
+        width="180"
+        src="../assets/images/isologotipo imprimir - opcion 1.png"
+        alt="logo iptecnology instalacion de camaras y alarmas de seguridad"
+      />
+      <h1 class="animate__animated animate__lightSpeedInRight animate__delay-2s">Carrito de compras</h1>
+    </header>
+    <nav class="nav">
+      <div class="navbar">
+        <ul class="navbarList">
+          <li class="navbarItem">
+            <a class="navLink" href="../index.html">HOME</a>
+          </li>
+          <li class="navbarItem">
+            <a class="navLink" href="./producto.html">PRODUCTOS</a>
+          </li>
+          <li class="navbarItem">
+            <a class="navLink" href="./alarmaComunitaria.html">ALARMAS</a>
+          </li>
+          <li class="navbarItem">
+            <a class="navLink" href="./videoVigilancia.html">SEGURIDAD</a>
+          </li>
+          <li class="navbarItem">
+            <a class="navLink" href="./contacto.html">CONTACTOS</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div id = "1" class="item">
+                <span class="titulo-item">1- Sensor Interior</span>
+                <img src="../assets/img/Sensor Interior.png" alt="" class="img-item">
+                <span class="precio-item">$4200</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div id = "2" class="item">
+                <span class="titulo-item">2- Modulo GSM</span>
+                <img src="../assets/img/Modulo GSM.png" alt="" class="img-item">
+                <span class="precio-item">$25000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">3- Camara IP</span>
+                <img src="../assets/img/Camara IP.png" alt="" class="img-item">
+                <span class="precio-item">$17800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">4- Camara Exterior Wifi</span>
+                <img src="../assets/img/Camara Exterior Wifi.png" alt="" class="img-item">
+                <span class="precio-item">$18000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">5- Sirena Comunitaria</span>
+                <img src="../assets/img/Sirena Comunitaria.png" alt="" class="img-item">
+                <span class="precio-item">$12000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">6- Kit Central DSC</span>
+                <img src="../assets/img/Kit Central DSC.png" alt="" class="img-item">
+                <span class="precio-item">$183000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">7- Cable Alarma</span>
+                <img src="../assets/img/Cable Alarma.png" alt="" class="img-item">
+                <span class="precio-item">$54</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">8- Central Suri 500</span>
+                <img src="../assets/img/Central Suri 500.png" alt="" class="img-item">
+                <span class="precio-item">$32000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">9- Bateria 7A</span>
+                <img src="../assets/img/Bateria 7A.png" alt="" class="img-item">
+                <span class="precio-item">$7800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Carrito</h2>
+            </div>
+
+            <div class="carrito-items">
+
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong id="hora-actual"></strong>
+                </div>
+                <div class="fila">
+                    <strong>Sub-total:</strong>
+                    <span class="carrito-precio-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <div class="fila">
+                    <strong>Iva:</strong>
+                    <span class="carrito-iva-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <div class="fila">
+                    <strong>TOTAL:</strong>
+                    <span class="carrito-precio-final">
+                        $120.000,00
+                    </span>
+                </div>
+                <button type="submit" class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="contFooter">
+          <div class="contItem">
+            <a href="https://wa.me/3515913415" target="_blank"
+              ><img
+                class="imgIcon"
+                src="../assets/images/Whatsapp_37229.png"
+                alt="icono Whatsapp_37229"
+            /></a>
+          </div>
+          <div class="contItem">
+            <a href="mailto:ventas@iptecnology.com.ar" target="_blank"
+              ><img
+                class="imgIcon"
+                src="../assets/icon/email.png.png"
+                alt="icono email"
+            /></a>
+          </div>
+          <div class="contItem">
+            <a href="https://www.instagram.com/iptecnology/?hl=es" target="_blank"
+              ><img
+                class="imgIcon"
+                src="../assets/icon/instagram.png.png"
+                alt="icono instagram"
+            /></a>
+          </div>
+          <div class="contItem">
+            <a href="https://www.facebook.com/iptecnology/" target="_blank"
+              ><img
+                class="imgIcon"
+                src="../assets/icon/facebock.png"
+                alt="icono facebock"
+            /></a>
+          </div>
+          <div class="contItem">
+            <a href="https://mobile.twitter.com/iptecnology" target="_blank"
+              ><img
+                class="imgIcon"
+                src="../assets/icon/twitter.png"
+                alt="icono twitter"
+            /></a>
+          </div>
+          <div class="contItem">
+            <a
+              href="https://www.youtube.com/channel/UCfqPimoDu485InK7HjsJtIQ"
+              target="_blank"
+              ><img
+                class="imgIcon"
+                src="../assets/icon/youtube.png"
+                alt="icono youtube"
+            /></a>
+          </div>
+
+          <div class="contItem">
+            <p>
+              <a>Propietario Iptecnology © 2018-2023</a>
+    
+              <a>Todos los derechos reservados.</a>
+            </p>
+          </div>
+        </div>
+
+      </footer>
+</body>
+</html>
