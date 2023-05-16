@@ -43,6 +43,7 @@ function ready(){
     for(var i=0; i<botonesAgregarAlCarrito.length;i++){
         var button = botonesAgregarAlCarrito[i];
         button.addEventListener('click', agregarAlCarritoClicked);
+     
     }
 
     //Agregamos funcionalidad al botón comprar
@@ -59,7 +60,7 @@ function pagarClicked(){
     actualizarTotalCarrito();
     ocultarCarrito();
 }
-//Funciòn que controla el boton clickeado de agregar al carrito
+//Funcion que controla el boton clickeado de agregar al carrito
 function agregarAlCarritoClicked(event){
     var button = event.target;
     var item = button.parentElement;
@@ -69,7 +70,7 @@ function agregarAlCarritoClicked(event){
     console.log(imagenSrc);
 
     agregarItemAlCarrito(titulo, precio, imagenSrc);
-
+    
     hacerVisibleCarrito();
 }
 
@@ -94,7 +95,7 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc){
     var nombresItemsCarrito = itemsCarrito.getElementsByClassName('carrito-item-titulo');
     for(var i=0;i < nombresItemsCarrito.length;i++){
         if(nombresItemsCarrito[i].innerText==titulo){
-            alert("El item ya se encuentra en el carrito");
+            alertaExiste();
             return;
         }
     }
@@ -142,6 +143,7 @@ function sumarCantidad(event){
     cantidadActual++;
     selector.getElementsByClassName('carrito-item-cantidad')[0].value = cantidadActual;
     actualizarTotalCarrito();
+    alertaAgregar();
 }
 //Resto en uno la cantidad del elemento seleccionado
 function restarCantidad(event){
@@ -150,9 +152,11 @@ function restarCantidad(event){
     console.log(selector.getElementsByClassName('carrito-item-cantidad')[0].value);
     var cantidadActual = selector.getElementsByClassName('carrito-item-cantidad')[0].value;
     cantidadActual--;
+   
     if(cantidadActual>=1){
         selector.getElementsByClassName('carrito-item-cantidad')[0].value = cantidadActual;
         actualizarTotalCarrito();
+        alertaEliminar()
     }
 }
 
@@ -163,7 +167,7 @@ function eliminarItemCarrito(event){
     //Actualizamos el total del carrito
     actualizarTotalCarrito();
 
-    //la siguiente funciòn controla si hay elementos en el carrito
+    //la siguiente funcion controla si hay elementos en el carrito
     //Si no hay elimino el carrito
     ocultarCarrito();
 }
@@ -209,4 +213,55 @@ function actualizarTotalCarrito(){
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es") + ",00";
     document.getElementsByClassName('carrito-iva-total')[0].innerText = '$'+iva.toLocaleString("es") + ",00";
     document.getElementsByClassName('carrito-precio-final')[0].innerText = '$'+totalFinal.toLocaleString("es") + ",00";
+}
+
+function alertaExiste(){
+    Toastify({
+        text: "El item ya se encuentra en el carrito",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #e74c3c, white)",
+            color: "black", 
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}
+
+function alertaEliminar(){
+    Toastify({
+        text: "Producto borrado",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "bottom", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #e74c3c, white)",
+            color: "black", 
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+}
+
+function alertaAgregar(){
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "bottom", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            color: "black", 
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
 }
