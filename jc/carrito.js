@@ -51,7 +51,7 @@ function ready(){
 }
 //Eliminamos todos los elementos del carrito y lo ocultamos
 function pagarClicked(){
-    alert("Gracias por la compra");
+    alertaPagar()
     //Elimino todos los elmentos del carrito
     var carritoItems = document.getElementsByClassName('carrito-items')[0];
     while (carritoItems.hasChildNodes()){
@@ -264,4 +264,41 @@ function alertaAgregar(){
         },
         onClick: function(){} // Callback after click
       }).showToast();
+}
+
+function alertaPagar(){
+    Toastify({
+        text: "Garcias por su compra",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            color: "black", 
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+      //demoro 2 seg el tiempo
+      setTimeout(regresaNuevamente,1000);
+    
+}
+
+function regresaNuevamente(){
+    Toastify({
+        text: "Regresa nuevamente...",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            color: "black", 
+        },
+        onClick: function(){} // Callback after click
+      }).showToast(); 
 }
