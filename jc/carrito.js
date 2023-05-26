@@ -1,3 +1,4 @@
+
 //Variable que mantiene el estado visible del carrito
 var carritoVisible = false;
 const productos=[
@@ -21,6 +22,7 @@ if (!carrito) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 } else {
   carrito = JSON.parse(carrito);
+ InicializarTodoElCarrito()
 }
 
 //hora
@@ -223,34 +225,47 @@ function actualizarTotalCarrito(){
         var item = carritoItems[i];
         var precioElemento = item.getElementsByClassName('carrito-item-precio')[0];
         var descripcion = item.getElementsByClassName('carrito-item-titulo')[0];
-        //quitamos el simobolo peso y el punto de milesimos.
+        //quitamos el simbolo peso y el punto de milesimos.
         var precio = parseFloat(precioElemento.innerText.replace('$','').replace('.',''));
         var cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
-        console.log(precio);
         var cantidad = cantidadItem.value;
+        console.log(precio, cantidad);
         total = total + (precio * cantidad);
         iva = iva + (precio * cantidad * 0.21);
         totalFinal = total + iva;
+        var ima = item.getElementsByClassName('carrito-item-img')[0].src;
 
-    //agrego los productos en el localStorage 
-    let productoNuevo = {
-        titulo: descripcion.innerText,
-        precio: precio,
-        cantidadProductos: cantidad,
-      };
-      
-      carrito.push(productoNuevo);
-      localStorage.setItem("carrito", JSON.stringify(carrito));
+        //agrego los productos en el localStorage
+        var verificacion = 0;
+        for (var j = 0; j < carrito.length; j++) {
+            if (descripcion.innerText === carrito[j].titulo) {
+                verificacion = 1;
+                carrito[j].cantidadProductos = cantidad; // Modificar la cantidad del producto existente
+                break;
+            }
+        }
 
+        if (verificacion === 0) {
+            let productoNuevo = {
+                titulo: descripcion.innerText,
+                precio: precio,
+                cantidadProductos: cantidad,
+                imagen: ima,
+            };
+            carrito.push(productoNuevo);
+        }
     }
-    // redondea un número al entero más cercano
-    total = Math.round(total * 100)/100;
-    iva = Math.round(iva * 100) / 100;
-    totalFinal = Math.round(totalFinal * 100)/100;
 
-    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es") + ",00";
-    document.getElementsByClassName('carrito-iva-total')[0].innerText = '$'+iva.toLocaleString("es") + ",00";
-    document.getElementsByClassName('carrito-precio-final')[0].innerText = '$'+totalFinal.toLocaleString("es") + ",00";
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // redondea un número al entero más cercano
+    total = Math.round(total * 100) / 100;
+    iva = Math.round(iva * 100) / 100;
+    totalFinal = Math.round(totalFinal * 100) / 100;
+
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
+    document.getElementsByClassName('carrito-iva-total')[0].innerText = '$' + iva.toLocaleString("es") + ",00";
+    document.getElementsByClassName('carrito-precio-final')[0].innerText = '$' + totalFinal.toLocaleString("es") + ",00";
 }
 
 function alertaExiste(){
@@ -339,4 +354,71 @@ function regresaNuevamente(){
         },
         onClick: function(){} // Callback after click
       }).showToast(); 
+}
+
+
+function InicializarTodoElCarrito() {
+    if (carrito.length !== 0) {
+        // Seleccionamos el contenedor carrito
+        var total = 0;
+        var iva = 0;
+        var totalFinal = 0;
+        hacerVisibleCarrito()
+        // Recorremos cada elemento del carrito para actualizar el total
+        for (var i = 0; i < carrito.length; i++) {
+        var titulo = carrito[i].titulo;
+        var precio = carrito[i].precio;
+        var cantidad = carrito[i].cantidadProductos;
+        var imagenSrc= carrito[i].imagen;
+        agregarItemAlCarrito2(titulo, precio, cantidad, imagenSrc);
+        total = total + (precio * cantidad);
+        iva = iva + (precio * cantidad * 0.21);
+        totalFinal = total + iva;
+    }
+    // Redondea un número al entero más cercano
+    total = Math.round(total * 100) / 100;
+    iva = Math.round(iva * 100) / 100;
+    totalFinal = Math.round(totalFinal * 100) / 100;
+  
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
+    document.getElementsByClassName('carrito-iva-total')[0].innerText = '$' + iva.toLocaleString("es") + ",00";
+    document.getElementsByClassName('carrito-precio-final')[0].innerText = '$' + totalFinal.toLocaleString("es") + ",00";
+    }
+
+  }
+
+
+  function agregarItemAlCarrito2(titulo, precio, cantidad, imagenSrc){
+    var item = document.createElement('div');
+    item.classList.add = ('item');
+    var itemsCarrito = document.getElementsByClassName('carrito-items')[0];
+
+    //controlamos que el item que intenta ingresar no se encuentre en el carrito
+    var nombresItemsCarrito = itemsCarrito.getElementsByClassName('carrito-item-titulo');
+    for(var i=0;i < nombresItemsCarrito.length;i++){
+        if(nombresItemsCarrito[i].innerText==titulo){
+            alertaExiste();
+            return;
+        }
+    }
+
+    var itemCarritoContenido = `
+        <div class="carrito-item">
+            <img src="${imagenSrc}" width="80px" alt="" class="carrito-item-img">
+            <div class="carrito-item-detalles">
+                <span class="carrito-item-titulo">${titulo}</span>
+                <div class="selector-cantidad">
+                    <i class="fa-solid fa-minus restar-cantidad"></i>
+                    <input type="text" value="${cantidad}" class="carrito-item-cantidad" disabled>
+                    <i class="fa-solid fa-plus sumar-cantidad"></i>
+                </div>
+                <span class="carrito-item-precio">${precio}</span>
+            </div>
+            <button class="btn-eliminar">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+    `
+    item.innerHTML = itemCarritoContenido;
+    itemsCarrito.append(item);
 }
