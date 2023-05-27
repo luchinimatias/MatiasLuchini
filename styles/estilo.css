@@ -295,7 +295,42 @@ a {
 .nav{
     flex: 1;
 }
+.imagenCarritoBoton {
   
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.imagenCarritoBoton .btn-Carrito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 0px 20px 0px 20px;
+  background-color: #a5a6ac;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.imagenCarritoBoton .btn-Carrito i {
+  margin-left: 5px;
+}
+
+.imagenCarritoBoton .btn-Carrito:hover {
+  box-shadow: 0px 0px 10px 0px;
+  background-color: #a5a6ac;
+}
+
+.imagenCarritoBoton .btn-Carrito:hover,
+.imagenCarritoBoton .btn-Carrito:hover span,
+.imagenCarritoBoton .btn-Carrito:hover i {
+  color: white;
+}
 /* SECCION RESPONSIVE */
 @media screen and (max-width: 850px) {
     .contenedor {
