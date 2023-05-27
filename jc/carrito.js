@@ -1,17 +1,43 @@
+//funcion asincrona
+const getProducts = async () => {
+    try {
+      const response = await fetch("../data.json");
+      const data = await response.json();
+      console.log(data);
+      data.forEach(producto => {
+        agregarProducto(producto.descripcion, producto.precio, producto.img);
+      });
+    } catch (error) {
+      console.log("Error al obtener los productos:", error);
+    }
+  }
+  
+  getProducts();
+  
+  // Función que agrega un item producto al HTML
+  function agregarProducto(titulo, precio, imagenSrc) {
+    var item = document.createElement('div');
+    item.classList.add('item');
+    var itemsProducto = document.getElementsByClassName('contenedor-items')[0];
+  
+    var itemProductoContenido = `       
+      
+        <span class="titulo-item">${titulo}</span>
+        <img src="${imagenSrc}" alt="" class="img-item">
+        <span class="precio-item">${precio}</span>
+        <button class="boton-item">Agregar al Carrito</button>
+      
+    `;
+    
+    item.innerHTML = itemProductoContenido;
+    itemsProducto.append(item);
+    ready()
+  }
+
 
 //Variable que mantiene el estado visible del carrito
+
 var carritoVisible = false;
-const productos=[
-    {nombre: "1", descripcion: "1- SENSOR INTERIOR", precio: 4200,img:"../assets/img/Sensor Interior.png"},
-    {nombre: "2", descripcion: "2- MODULO GSM", precio: 25000, img:"../assets/img/Modulo GSM.png"},
-    {nombre: "3", descripcion: "3- CAMARA IP",precio: 17800, img:"../assets/img/Camara IP.png"},
-    {nombre: "4", descripcion: "4- CAMARA EXTERIOR WIFI",precio: 18000, img:"../assets/img/Camara Exterior Wifi.png"},
-    {nombre: "5", descripcion: "5- SIRENA COMUNITARIA",precio: 12000, img:"../assets/img/Sirena Comunitaria.png"},
-    {nombre: "6", descripcion: "6- KIT CENTRAL DSC",precio: 183000, img:"../assets/img/Kit Central DSC.png"},
-    {nombre: "7", descripcion: "7- CABLE ALARMA",precio: 54, img:"../assets/img/Cable Alarma.png"},
-    {nombre: "8", descripcion: "8- CENTRAL SURI 500",precio: 32000,img:"../assets/img/Central Suri 500.png"},
-    {nombre: "9", descripcion: "9- BATERIA 7A",precio: 7800, img:"../assets/img/Bateria 7A.png"},
-]
 
 // Verificar si el carrito ya existe en el localStorage
 let carrito = localStorage.getItem("carrito");
@@ -40,7 +66,7 @@ if(document.readyState == 'loading'){
 }
 
 function ready(){
-    
+
     //Agregremos funcionalidad a los botones eliminar del carrito
     var botonesEliminarItem = document.getElementsByClassName('btn-eliminar');
     for(var i=0;i<botonesEliminarItem.length; i++){
@@ -123,6 +149,7 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc){
             return;
         }
     }
+    alertaAgregar();
 
     var itemCarritoContenido = `
         <div class="carrito-item">
@@ -190,6 +217,7 @@ function eliminarItemCarrito(event) {
     // Eliminar el elemento del DOM
     buttonClicked.parentElement.parentElement.remove();
     // Actualizar el total del carrito
+    alertaEliminar()
     actualizarTotalCarrito(); 
     // Controlar si hay elementos en el carrito
     // Si no hay, ocultar el carrito
@@ -204,7 +232,7 @@ function ocultarCarrito(){
         carrito.style.marginRight = '-100%';
         carrito.style.opacity = '0';
         carritoVisible = false;
-    
+
         var items =document.getElementsByClassName('contenedor-items')[0];
         items.style.width = '100%';
     }
@@ -220,6 +248,7 @@ function actualizarTotalCarrito(){
     var total = 0;
     var iva = 0;
     var totalFinal = 0;
+    var totalCarritoTotal =0;
     //recorremos cada elemento del carrito para actualizar el total
     for(var i=0; i< carritoItems.length;i++){
         var item = carritoItems[i];
@@ -232,6 +261,8 @@ function actualizarTotalCarrito(){
         console.log(precio, cantidad);
         total = total + (precio * cantidad);
         iva = iva + (precio * cantidad * 0.21);
+        var cantidad = parseInt(cantidadItem.value);
+        totalCarritoTotal = totalCarritoTotal + cantidad;
         totalFinal = total + iva;
         var ima = item.getElementsByClassName('carrito-item-img')[0].src;
 
@@ -262,7 +293,7 @@ function actualizarTotalCarrito(){
     total = Math.round(total * 100) / 100;
     iva = Math.round(iva * 100) / 100;
     totalFinal = Math.round(totalFinal * 100) / 100;
-
+    document.getElementsByClassName('carrito-producto-cantidad')[0].innerText = totalCarritoTotal.toLocaleString("es");
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
     document.getElementsByClassName('carrito-iva-total')[0].innerText = '$' + iva.toLocaleString("es") + ",00";
     document.getElementsByClassName('carrito-precio-final')[0].innerText = '$' + totalFinal.toLocaleString("es") + ",00";
@@ -363,6 +394,7 @@ function InicializarTodoElCarrito() {
         var total = 0;
         var iva = 0;
         var totalFinal = 0;
+        var totalCarritoTotal =0;
         hacerVisibleCarrito()
         // Recorremos cada elemento del carrito para actualizar el total
         for (var i = 0; i < carrito.length; i++) {
@@ -373,20 +405,20 @@ function InicializarTodoElCarrito() {
         agregarItemAlCarrito2(titulo, precio, cantidad, imagenSrc);
         total = total + (precio * cantidad);
         iva = iva + (precio * cantidad * 0.21);
+        totalCarritoTotal = totalCarritoTotal + cantidad;
         totalFinal = total + iva;
     }
     // Redondea un número al entero más cercano
     total = Math.round(total * 100) / 100;
     iva = Math.round(iva * 100) / 100;
     totalFinal = Math.round(totalFinal * 100) / 100;
-  
+     document.getElementsByClassName('carrito-producto-cantidad')[0].innerText = totalCarritoTotal.toLocaleString("es");
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
     document.getElementsByClassName('carrito-iva-total')[0].innerText = '$' + iva.toLocaleString("es") + ",00";
     document.getElementsByClassName('carrito-precio-final')[0].innerText = '$' + totalFinal.toLocaleString("es") + ",00";
     }
 
   }
-
 
   function agregarItemAlCarrito2(titulo, precio, cantidad, imagenSrc){
     var item = document.createElement('div');
